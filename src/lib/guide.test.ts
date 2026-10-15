@@ -33,3 +33,11 @@ describe("how Plantify works guide", () => {
     });
   });
 });
+
+describe("guide tidy-up progress", () => {
+  it("says what happened to every recommended fix", () => {
+    const progress = guide.split("## Tidy-up progress")[1].split("\n## ")[0];
+    const fixes = guide.split("\n## ").at(-1)!.split("\n").filter((line) => /^\d+\. /.test(line));
+    fixes.forEach((_, i) => expect(progress).toMatch(new RegExp(`fix(es)?[^.]*\\b${i + 1}\\b`)));
+  });
+});
