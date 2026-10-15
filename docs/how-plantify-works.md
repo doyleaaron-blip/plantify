@@ -20,8 +20,9 @@ each feature cleanly, one backlog item at a time.
 
 ### Home page (the only page that exists)
 
-Opening the website shows the name "Plantify" and one sentence saying the app
-is ready for backlog items. It has no buttons and does nothing else.
+Opening the website shows the name "Plantify", one sentence describing what
+it is for, and a "Coming soon" list of the four main features. It has no
+buttons yet and does nothing else.
 
 ### Taking a photo
 
@@ -76,12 +77,24 @@ when the time comes; you never need to paste it anywhere yourself.
 
 - **Analytics switch themselves off quietly** if the PostHog key is missing.
   The site still works, but no usage is recorded and nothing warns you.
-- **The page title and description** still use the factory's starter wording
-  ("built by the Software Factory") rather than describing Plantify.
 - **The website uses a very new version of Next.js** (the toolkit it is built
   with). It works, but it behaves differently from older versions, so the
   builder has to check the toolkit's own notes before using unfamiliar parts.
 - There are no other surprises: the code is small, tidy and fully tested.
+
+## Tidy-up progress (15 October 2026)
+
+What happened to each fix in the list below:
+
+- **Done:** fix 7 (the home page now describes Plantify and lists the features
+  on the way) and fix 8 (the page title and description now describe Plantify).
+- **Skipped, needs your decision first:** fix 1 (phone-only or online saving)
+  and fix 2 (which AI service, plus its key). The factory will ask you.
+- **Skipped, too big for a tidy-up:** fixes 3, 4, 5 and 6 are whole new
+  features, so each should be its own backlog item. Fixes 4 and 6 also wait on
+  fixes 2 and 1.
+- **Skipped, nothing to record yet:** fix 9. Each feature item should add its
+  own analytics event when it is built.
 
 ## Recommended fixes and tidy-ups
 
