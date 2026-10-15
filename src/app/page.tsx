@@ -1,4 +1,5 @@
 import { APP_DESCRIPTION, APP_NAME, PLANNED_FEATURES } from "@/lib/app";
+import IdentifyForm from "./identify-form";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
         <h1 className="text-3xl font-semibold">🌱 {APP_NAME}</h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400">{APP_DESCRIPTION}</p>
       </header>
+      <IdentifyForm />
       <section className="flex flex-col gap-3">
         <h2 className="text-xl font-semibold">Coming soon</h2>
         <ul className="flex flex-col gap-3">

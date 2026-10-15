@@ -49,3 +49,4 @@ npm run build        # production build
 |---|---|---|
 | `NEXT_PUBLIC_POSTHOG_KEY` | Vercel | PostHog project key (public) |
 | `NEXT_PUBLIC_POSTHOG_HOST` | Vercel | PostHog address (EU) |
+| `ANTHROPIC_API_KEY` | Vercel | Claude key for plant identification (server only, secret) |
