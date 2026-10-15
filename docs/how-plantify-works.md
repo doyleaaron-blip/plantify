@@ -5,11 +5,9 @@ builder on 15 October 2026 after reading every file in the app.
 
 ## The short version
 
-**Plantify is a blank starting point right now.** The app's code contains one
-welcome page and the factory's standard setup (analytics, tests, hosting).
-None of the plant features have been built in this app's code yet: there is
-no photo screen, no plant identification, no care advice and no watering
-tracker. If you have seen these features somewhere else (for example an older
+**Plantify is at an early stage.** The home page lets you take or choose a
+photo of a plant and tells you what it is. There is no care advice and no
+watering tracker yet. If you have seen these features somewhere else (for example an older
 version of Plantify, or a prototype made with another tool), that code is
 **not** in this app's code, so the factory can't see or reuse it.
 
@@ -25,13 +23,14 @@ is ready for backlog items. It has no buttons and does nothing else.
 
 ### Taking a photo
 
-**Not built yet.** There is no camera button and no way to choose a picture.
-When it is built, phones can open the camera straight from a web page, so a
-separate phone app isn't needed.
+The home page has a "Take or choose a plant photo" button. On a phone it
+opens the camera straight from the web page, so a separate phone app isn't
+needed. Photos are not saved anywhere.
 
 ### Identifying the plant
 
-**Not built yet.** Nothing sends a photo anywhere or names a plant.
+The photo is sent to Claude, which replies with the plant's everyday name and
+scientific name. If there is no plant in the photo, the app says so.
 
 ### Care advice
 
@@ -59,18 +58,18 @@ When this gets built there are two choices, and it matters which one you pick:
 
 ## The AI service that identifies plants
 
-**None is connected yet.** The app has no AI service and no setting or key for
-one. The only settings the app uses today are for analytics:
+**Claude** (Anthropic's AI) looks at each photo and names the plant. The key
+for it lives only in the app's private settings, never in the code:
 
 | Setting | What it's for |
 |---|---|
 | `NEXT_PUBLIC_POSTHOG_KEY` | Lets the app send usage counts to PostHog (analytics) |
 | `NEXT_PUBLIC_POSTHOG_HOST` | Which PostHog address to send them to (the EU one) |
+| `ANTHROPIC_API_KEY` | Lets the app ask Claude to identify plants (kept secret, used on the server only) |
 
-Identifying plants will need a new key from whichever service is chosen (for
-example Plant.id, PlantNet, or a general AI model that can look at photos,
-such as Claude). The factory will ask you for that key through its secure form
-when the time comes; you never need to paste it anywhere yourself.
+If that key is missing or wrong, people see "Plant identification is
+unavailable right now" instead of an error. To change the key, the factory
+asks you through its secure form; you never need to paste it anywhere yourself.
 
 ## Anything fragile or unusual
 
